@@ -23,4 +23,4 @@ def time_tig():
     utc_timestamp = datetime.datetime.utcnow().replace(
         tzinfo=datetime.timezone.utc).isoformat()
     logging.info('Python timer trigger function ran at %s', utc_timestamp)
-    print('Printed Python timer trigger function ran at %s', utc_timestamp)
+    print('Printed Python timer trigger function! ran at %s', utc_timestamp)

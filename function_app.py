@@ -31,7 +31,7 @@ def read_blob(readfile: func.InputStream):
     reader=csv.reader(codecs.iterdecode(readfile,"utf-8"))
     for line in reader:
         print(line)
-    logging.info(f"Python {readfile.name}")
+    logging.info(f"reregre {readfile.name}")
 
 
 @app.function_name(name='Checkdeploy')

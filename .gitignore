@@ -38,13 +38,13 @@ env.bak/
 venv.bak/
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+#__pycache__/
 *.py[cod]
 *$py.class
 
 # Azurite artifacts
-__blobstorage__
-__queuestorage__
-__azurite_db*__.json
+#__blobstorage__
+#__queuestorage__
+#__azurite_db*__.json
 
-.vscode/
+#.vscode/

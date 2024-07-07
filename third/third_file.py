@@ -16,3 +16,11 @@ def aisehiaise(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.New pipeline.')
     value=os.getenv("random_value")
     return func.HttpResponse(f"Hello aisekitaise ho gya push azure function app mein new, {value} :value {datetime.datetime.now()}",status_code=200)
+
+@bp2.function_name(name='Time_trigger_one')
+@bp2.time_trigger(schedule="0 */3 * * * *",run_on_startup=True)
+def time_tig():
+    utc_timestamp = datetime.datetime.utcnow().replace(
+        tzinfo=datetime.timezone.utc).isoformat()
+    logging.info('Python timer trigger function ran at %s', utc_timestamp)
+    print('printed Python timer trigger function ran at %s', utc_timestamp)

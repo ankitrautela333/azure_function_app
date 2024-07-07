@@ -18,9 +18,11 @@ def aisehiaise(req: func.HttpRequest) -> func.HttpResponse:
     return func.HttpResponse(f"Hello aisekitaise ho gya push azure function app mein new, {value} :value {datetime.datetime.now()}",status_code=200)
 
 @bp2.function_name(name='Time_trigger_one')
-@bp2.time_trigger(schedule="0 */3 * * * *",run_on_startup=True)
-def time_tig():
+@bp2.timer_trigger(schedule="0 */3 * * * *",run_on_startup=True,arg_name="mytimer")
+def time_tig(mytimer: func.TimerRequest):
     utc_timestamp = datetime.datetime.utcnow().replace(
         tzinfo=datetime.timezone.utc).isoformat()
     logging.info('Python timer trigger function ran at %s', utc_timestamp)
     print('Printed Python timer trigger function! ran at %s', utc_timestamp)
+    if mytimer.past_due:
+        logging.info('The timer is past due!')

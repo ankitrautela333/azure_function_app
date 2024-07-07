@@ -13,6 +13,7 @@ app.register_blueprint(bp)
 app.register_blueprint(bp2)
 #changed the slots
 #Why no change
+#Why change not
 @app.function_name(name='Firstfunction')
 @app.route(route="newroute",auth_level=func.AuthLevel.ANONYMOUS)
 def test_function(req: func.HttpRequest) -> func.HttpResponse:
